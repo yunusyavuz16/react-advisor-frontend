@@ -1,129 +1,194 @@
-# Alumni Network Platform
 
-✨✨✨ This project is a React-based web application developed using TypeScript and Vite. It serves as a platform for alumni to connect with each other through their profiles, job postings, and shared interests. The communication between users occurs through Gmail or via social media links shared in their profiles. The application includes several pages like login, register, profile, job postings, and alumni listing. ✨✨✨
+# React Chat Application
 
-## Table of Contents
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [Installation](#installation)
-- [Technologies Used](#technologies-used)
-- [Folder Structure](#folder-structure)
-- [Usage](#usage)
-- [Future Improvements](#future-improvements)
+This is a chat application built using **React**, **TypeScript**, and **Tailwind CSS**. The project is modular, type-safe, and includes essential functionalities for a chat-based application.
+
+---
+
+## Project Structure
+
+The project structure is organized as follows:
+
+```
+src/
+├── api/               # Contains API utility functions
+│   ├── api.ts         # General API utilities
+│   ├── getChats.ts    # Fetch chats from the backend
+│   └── isUserAnswerRelated.ts # Check user responses
+├── components/        # Reusable React components
+│   ├── ChatHistory.tsx  # Displays chat history
+│   ├── ChatView.tsx     # Chat view container
+│   ├── InputBar.tsx     # Input bar for user messages
+│   └── TabButtons.tsx   # Tab navigation buttons
+├── constants/         # Contains constant values used in the app
+│   ├── api-url.ts     # Backend API base URL
+│   └── questions.ts   # Predefined questions for chat logic
+├── hooks/             # Contains custom React hooks
+│   ├── useChat.ts       # Hook for chat logic
+│   └── useChatHistory.ts # Hook for managing chat history
+├── screens/           # Screens for the application
+│   └── ChatScreen.tsx # Main chat screen
+├── types/             # Contains TypeScript type definitions
+│   ├── api.ts         # Shared API types
+│   ├── chat-api.ts    # Types related to chat API
+│   └── index.ts       # Exported type definitions
+├── App.tsx            # Main app entry point
+├── index.tsx          # Application bootstrap file
+├── tailwind.config.js # Tailwind CSS configuration
+└── tsconfig.json      # TypeScript configuration
+```
+
+---
 
 ## Features
-✨✨✨
-- **Authentication**: Secure login and registration pages.
-- **Profile Management**: Users can create and update their profiles, including sharing Gmail and social media links.
-- **Job Postings**: Alumni can view job postings shared within the platform.
-- **Alumni Directory**: A directory to view and connect with fellow alumni.
-- **Error Handling**: Ensures smooth user experience through robust error boundaries.
-✨✨✨
 
-## Screenshots
-✨✨✨ Below are the primary screens of the application: ✨✨✨
+- **Frontend**:
+  - Built with **React** and **TypeScript** for type safety and modularity.
+  - Styled with **Tailwind CSS** for utility-first, responsive styling.
+  - Includes reusable components for scalability.
+  - Implements custom hooks for clean and reusable logic.
 
-1. **Login Screen**
-![Login Screen](./src/assets/login.jpeg)
+- **Backend Integration**:
+  - Fetches chat data and processes user responses using **API utilities**.
+  - Supports real-time chat display and dynamic message rendering.
 
-2. **Home Screen**
-![Home Screen](./src/assets/home-screen.jpeg)
+---
 
-3. **Profile Screen**
-![Profile Screen](./src/assets/profile.jpeg)
+## Prerequisites
 
-4. **Job Postings Screen**
-![Job Postings Screen](./src/assets/jobs.jpeg)
+Ensure you have the following installed:
 
-5. **Alumni Directory**
-![Alumni Directory](./src/assets/alumnies.jpeg)
+- **Node.js**: >= 14.x
+- **Yarn**: >= 1.22.x (or npm)
 
-## Installation
-✨✨✨ To run the project locally, follow these steps: ✨✨✨
+---
+
+## Getting Started
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo-name.git
+   git clone <repository-url>
+   cd react-chat-app
    ```
 
-2. Navigate to the project directory:
+2. Install dependencies:
    ```bash
-   cd alumni-network-platform
+   yarn install
    ```
 
-3. Install the dependencies:
+3. Start the development server:
    ```bash
-   npm install
+   yarn start
    ```
 
-4. Start the development server:
-   ```bash
-   npm run dev
+4. Open the app in your browser:
    ```
-
-5. Open your browser and go to:
+   http://localhost:3000
    ```
-   http://localhost:5173
-   ```
-
-## Technologies Used
-✨✨✨
-- **React**: Frontend framework for building user interfaces.
-- **TypeScript**: For type safety and better developer experience.
-- **Vite**: A fast build tool for modern web projects.
-- **CSS**: For styling the application.
-- **React Router**: For navigation and routing.
-✨✨✨
-
-## Folder Structure
-✨✨✨
-```
-src
-├── assets                # Images and static assets
-├── components            # Reusable UI components
-├── contexts              # Context providers for global state
-├── hooks                 # Custom React hooks
-├── layout                # Layout components for pages
-├── models                # TypeScript type definitions
-├── navigation            # Route configuration
-├── pages                 # Main pages of the application
-├── shared                # Shared utilities (auth, cookies, etc.)
-├── store                 # State management (if applicable)
-└── App.tsx               # Root component
-```
-✨✨✨
-
-## Usage
-### Authentication
-✨✨✨
-1. Users can register on the platform with their name, email, and password.
-2. After logging in, they can complete their profiles by adding social media links or updating their Gmail.
-✨✨✨
-
-### Alumni Directory
-✨✨✨
-- Navigate to the Alumni Directory page to view other registered users.
-- Profiles include details like names, photos, and contact options if shared.
-✨✨✨
-
-### Job Postings
-✨✨✨
-- Browse job postings to find new opportunities.
-✨✨✨
-
-### Profile Management
-✨✨✨
-- Users can edit their profiles to update contact information or add a profile picture.
-✨✨✨
-
-## Future Improvements
-✨✨✨
-- **Messaging Feature**: Enable direct communication between users within the platform.
-- **Advanced Search**: Add filters and sorting options for job postings and alumni directory.
-- **Mobile Responsiveness**: Optimize the UI for better usability on mobile devices.
-- **Notification System**: Inform users about new job postings or profile views.
-✨✨✨
 
 ---
-✨✨✨ This project was developed as a volunteer effort for a class at Bogazici University. Contributions and feedback are welcome! ✨✨✨
-@@
+
+## Scripts
+
+- `yarn start`: Starts the development server.
+- `yarn build`: Builds the project for production.
+- `yarn test`: Runs unit tests using Jest.
+- `yarn lint`: Lints the project for code quality.
+
+---
+
+## API Integration
+
+### Chat API
+
+The application communicates with a backend via the following API endpoints:
+
+- **Get Chats** (`GET /chats`):
+  Fetches chat messages from the server with optional query parameters:
+  - `page` (number): Pagination page.
+  - `per_page` (number): Number of messages per page.
+
+- **Example API Utility**:
+  ```typescript
+  import axios from 'axios';
+  import { API_URL } from '../constants/api-url';
+
+  export const getChats = async (page = 1, perPage = 10) => {
+    const { data } = await axios.get(`${API_URL}/chats`, {
+      params: { page, per_page: perPage },
+    });
+    return data;
+  };
+  ```
+
+---
+
+## Styling
+
+The application uses **Tailwind CSS** for styling. Update `tailwind.config.js` to customize the design system.
+
+**Example**:
+```javascript
+module.exports = {
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        primary: '#1D4ED8',
+        secondary: '#9333EA',
+      },
+    },
+  },
+  plugins: [],
+};
+```
+
+---
+
+## TypeScript Types
+
+TypeScript provides strict type checking throughout the application. Types are stored in the `types/` directory. Example:
+
+```typescript
+export interface Message {
+  id: string;
+  isAI: boolean;
+  text: string;
+}
+```
+
+---
+
+## Deployment
+
+To build the project for production:
+
+1. Build the project:
+   ```bash
+   yarn build
+   ```
+
+2. Serve the build folder using a web server (e.g., **Netlify**, **Vercel**, or **Nginx**).
+
+---
+
+## Contributions
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new feature branch.
+3. Commit your changes.
+4. Submit a pull request.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## Acknowledgements
+
+Special thanks to the **React** and **Tailwind CSS** communities for their excellent documentation and resources.
